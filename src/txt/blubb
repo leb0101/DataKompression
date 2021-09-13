@@ -1,0 +1,13 @@
+﻿select * from tbl_veranstalter where Veranstaltungsort="Mannheim" or Veranstaltungsort="Leipzig";
+select *from tbl_personal where Gesch="M" and Gehalt > 5000;
+select * from tbl_veranstalter a, tbl_schulungen b where a.VeranstalterNr=b.VeranstalterNr
+and a.Veranstaltungsort="Essen";
+
+select PersonalNr,Vorname,Name from tbl_personal where Name like "K%";
+
+select a.Name, a.Vorname, b.Schulungsnr, b.Kursbeginn from tbl_personal a, tbl_schulungen b, tbl_teilnehmer c where a.PersonalNr=c.PersonalNr and
+b.SchulungsNr=c.SchulungsNr and year(b.Kursbeginn) <= 2008 and month(b.Kursbeginn) < 4;
+
+select a.Name, a.Vorname, b.Schulungsnr, b.Kursbeginn from tbl_personal a, tbl_schulungen b, tbl_teilnehmer c where a.PersonalNr=c.PersonalNr and
+b.SchulungsNr=c.SchulungsNr
+
